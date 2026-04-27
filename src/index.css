@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --surface-muted: 228 14% 96%;
+    --text-primary: 0 0% 0%;
+    --text-heading: 0 0% 0%;
+    --text-muted: 0 0% 60%;
+    --border-light: 0 0% 90%;
+    
+    /* Brand & Accents */
+    --brand-primary: 207 86% 55%;
+    --accent-red: 0 79% 63%;
+    --accent-yellow: 41 94% 61%;
+    --accent-purple: 291 43% 51%;
+    --accent-teal: 174 55% 41%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --surface-muted: 217 33% 17%;
+    --text-primary: 210 40% 98%;
+    --text-heading: 0 0% 100%;
+    --text-muted: 215 20% 65%;
+    --border-light: 216 34% 27%;
+  }
+}
+
+body {
+  @apply bg-background text-muted/90 font-sans leading-[1.8];
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-sans font-bold text-heading tracking-tight;
+}
+
+/* Custom Scrollbar (optional but good for modern portfolio) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--surface-muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border-light));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-muted));
+}
